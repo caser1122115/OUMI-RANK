@@ -127,27 +127,49 @@ input[type="text"], input[type="number"], input[type="password"] {
     }
 }
 
-/* 手机端适配 */
+/* 手机端适配优化：字体更大、元素更易点击 */
 @media (max-width: 768px) {
     body {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.5em;
+        padding: 12px;
+        font-size: 16px; /* 原来14px -> 提升为16px */
+        line-height: 1.6;
     }
 
     table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-        font-size: 14px;
+        font-size: 15px; /* 原来13px -> 提升为15px */
+        box-shadow: none;
     }
 
     th, td {
-        padding: 8px 6px;
+        padding: 10px 6px; /* 更好触控间距 */
+    }
+
+    h1 {
+        font-size: 22px; /* 原来20px -> 更醒目 */
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    #adminArea {
+        padding: 12px;
+        margin-top: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    input[type="text"], input[type="number"], input[type="password"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 15px;
     }
 }
+
 
 /* 极小屏幕（小手机） */
 @media (max-width: 480px) {
@@ -220,4 +242,5 @@ input[type="text"], input[type="number"], input[type="password"] {
         font-size: 15px;
     }
 }
+
 
