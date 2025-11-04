@@ -34,7 +34,7 @@ async function loadData() {
                 <td>${row.pay}</td>
                 <td>${row.roi.toFixed(2)}</td>
                 <td>${row.value}</td>
-                <td>${row.earned.toFixed(2)}</td>
+                <td>${row.earned.toFixed(0)}</td>
             `;
             tbody.appendChild(tr);
         });
@@ -49,3 +49,4 @@ async function loadData() {
 
 loadData();
 setInterval(loadData, 30000);
+
