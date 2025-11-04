@@ -1,0 +1,108 @@
+/* 全局样式 */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #ffe6f0, #ffd9e8); /* 淡粉色渐变 */
+    padding: 20px;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #b91c73; /* 深粉色标题，更突出 */
+}
+
+/* 表格样式 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #ec4899; /* 粉色表头 */
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #ffe6f5; /* 偏浅粉色 */
+}
+
+tr:hover {
+    background-color: #ffd6eb; /* 悬停颜色 */
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+
+/* 前三名高亮 */
+tr.top {
+    background: linear-gradient(90deg, #ffb6c1, #ff69b4); /* 亮粉色渐变 */
+    font-weight: bold;
+    animation: highlight 2s infinite alternate;
+}
+
+@keyframes highlight {
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
+}
+
+/* 排行榜说明 */
+.note {
+    color: #b91c73; /* 标注颜色改为深粉色 */
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* 按钮样式 */
+button {
+    margin: 3px;
+    padding: 6px 12px;
+    background-color: #ec4899; /* 粉色按钮 */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #db2777; /* 深粉色悬停 */
+}
+
+/* 输入框样式 */
+input[type="text"], input[type="number"], input[type="password"] {
+    padding: 6px 10px;
+    margin: 2px;
+    border: 1px solid #f9a8d4;
+    border-radius: 4px;
+    width: 120px;
+}
+
+/* 更新提示 */
+#updated {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #b91c73;
+}
+
+/* 后台管理区域 */
+#adminArea {
+    background-color: #ffe6f5; /* 淡粉色背景 */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.note {
+    display: none;
+}
+h1 {
+    color: #000000 !important;
+}
