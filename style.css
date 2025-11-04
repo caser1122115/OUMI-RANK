@@ -8,12 +8,6 @@ body {
     padding: 20px;
     color: #333;
     margin: 0;
-    animation: fadeInBody 0.8s ease-in;
-}
-
-@keyframes fadeInBody {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
@@ -21,28 +15,12 @@ h1 {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeInTitle 0.8s ease-in forwards;
-    animation-delay: 0.3s;
 }
 
-@keyframes fadeInTitle {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== 表格区域容器 ===== */
+/* ===== 表格区域容器（让手机端可横向滑动） ===== */
 .table-container {
     width: 100%;
     overflow-x: auto;
-    opacity: 0;
-    animation: fadeInContainer 0.8s ease-in forwards;
-    animation-delay: 0.6s;
-}
-
-@keyframes fadeInContainer {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== 表格样式 ===== */
@@ -60,25 +38,6 @@ th, td {
     padding: 12px 15px;
     text-align: center;
     font-size: 1rem;
-}
-
-/* ===== 每一行依次淡入动画 ===== */
-tbody tr {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeInRow 0.6s ease-out forwards;
-}
-
-tbody tr:nth-child(1) { animation-delay: 0.2s; }
-tbody tr:nth-child(2) { animation-delay: 0.4s; }
-tbody tr:nth-child(3) { animation-delay: 0.6s; }
-tbody tr:nth-child(4) { animation-delay: 0.8s; }
-tbody tr:nth-child(5) { animation-delay: 1.0s; }
-/* 如果行数更多可继续延长 */
-
-@keyframes fadeInRow {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 th {
@@ -105,8 +64,8 @@ tr.top {
 }
 
 @keyframes highlight {
-    0% { background-position: 0%; }
-    100% { background-position: 100%; }
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
 }
 
 /* ===== 更新时间 ===== */
@@ -115,14 +74,6 @@ tr.top {
     text-align: center;
     font-size: 0.9rem;
     color: #b91c73;
-    opacity: 0;
-    animation: fadeInUpdated 0.8s ease-in forwards;
-    animation-delay: 1.2s;
-}
-
-@keyframes fadeInUpdated {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== 响应式设计 ===== */
