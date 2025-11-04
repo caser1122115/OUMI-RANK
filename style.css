@@ -1,37 +1,43 @@
-/* 全局样式 */
+/* ===== 全局样式 ===== */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #ffe6f0, #ffd9e8); /* 淡粉色渐变 */
-    background-attachment: fixed; /* 背景固定，不随滚动移动 */
+    background: linear-gradient(to bottom, #ffe6f0, #ffd9e8);
+    background-attachment: fixed; /* 防止背景断层 */
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: cover; /* 始终铺满整个视口 */
-    min-height: 100vh; /* 保证至少一屏高度 */
-    margin: 0;
     padding: 20px;
     color: #333;
-    box-sizing: border-box;
+    margin: 0;
 }
 
-h1, h2, h3 {
-    color: #b91c73; /* 深粉色标题 */
+h1 {
+    color: #000;
     text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
 }
 
-/* 表格样式 */
+/* ===== 表格区域容器（让手机端可横向滑动） ===== */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* ===== 表格样式 ===== */
 table {
     border-collapse: collapse;
     width: 100%;
+    min-width: 600px;
     margin-top: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: hidden;
-    background-color: #fff;
 }
 
 th, td {
     padding: 12px 15px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 th {
@@ -50,7 +56,7 @@ tr:hover {
     transition: 0.3s;
 }
 
-/* 前三名高亮 */
+/* ===== 前三名高亮 ===== */
 tr.top {
     background: linear-gradient(90deg, #ffb6c1, #ff69b4);
     font-weight: bold;
@@ -62,99 +68,46 @@ tr.top {
     100% {background-position: 100%;}
 }
 
-/* 隐藏说明文字 */
-.note {
-    display: none;
-}
-
-/* 按钮样式 */
-button {
-    margin: 3px;
-    padding: 6px 12px;
-    background-color: #ec4899;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #db2777;
-}
-
-/* 输入框样式 */
-input[type="text"], input[type="number"], input[type="password"] {
-    padding: 6px 10px;
-    margin: 2px;
-    border: 1px solid #f9a8d4;
-    border-radius: 4px;
-    width: 120px;
-}
-
-/* 更新时间提示 */
+/* ===== 更新时间 ===== */
 #updated {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #b91c73;
+    margin-top: 15px;
     text-align: center;
+    font-size: 0.9rem;
+    color: #b91c73;
 }
 
-/* 后台管理区域 */
-#adminArea {
-    background-color: #ffe6f5;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* 积分榜标题为黑色 */
-h1 {
-    color: #000000 !important;
-}
-
-/* 响应式设计 */
-@media (max-width: 1024px) {
-    body {
-        padding: 15px;
-    }
-    th, td {
-        padding: 10px;
-        font-size: 15px;
-    }
-    h1 {
-        font-size: 26px;
-    }
-}
-
+/* ===== 响应式设计 ===== */
 @media (max-width: 768px) {
     body {
         padding: 10px;
-        background-attachment: scroll; /* 防止手机端背景断层 */
     }
-    table {
-        font-size: 14px;
-    }
-    th, td {
-        padding: 8px;
-    }
+
     h1 {
-        font-size: 22px;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    #updated {
+        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 8px;
-    }
-    table {
-        font-size: 13px;
-    }
-    th, td {
-        padding: 6px;
-    }
     h1 {
-        font-size: 20px;
+        font-size: 1.4rem;
+    }
+
+    th, td {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    table {
+        min-width: 400px;
     }
 }
