@@ -1,13 +1,22 @@
-/* 全局样式 */
+/* === 全局样式 === */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to bottom, #ffe6f0, #ffd9e8); /* 淡粉色渐变 */
     padding: 20px;
     color: #333;
+    margin: 0;
 }
 
+/* 标题样式 */
 h1, h2, h3 {
-    color: #b91c73; /* 深粉色标题，更突出 */
+    color: #b91c73;
+}
+
+h1 {
+    color: #000000 !important;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 10px;
 }
 
 /* 表格样式 */
@@ -23,27 +32,28 @@ table {
 th, td {
     padding: 12px 15px;
     text-align: center;
+    word-break: break-word;
 }
 
 th {
-    background-color: #ec4899; /* 粉色表头 */
+    background-color: #ec4899;
     color: white;
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: #ffe6f5; /* 偏浅粉色 */
+    background-color: #ffe6f5;
 }
 
 tr:hover {
-    background-color: #ffd6eb; /* 悬停颜色 */
+    background-color: #ffd6eb;
     transform: scale(1.01);
     transition: 0.3s;
 }
 
 /* 前三名高亮 */
 tr.top {
-    background: linear-gradient(90deg, #ffb6c1, #ff69b4); /* 亮粉色渐变 */
+    background: linear-gradient(90deg, #ffb6c1, #ff69b4);
     font-weight: bold;
     animation: highlight 2s infinite alternate;
 }
@@ -53,18 +63,16 @@ tr.top {
     100% {background-position: 100%;}
 }
 
-/* 排行榜说明 */
+/* 排行榜说明（隐藏） */
 .note {
-    color: #b91c73; /* 标注颜色改为深粉色 */
-    font-size: 14px;
-    margin-bottom: 10px;
+    display: none;
 }
 
 /* 按钮样式 */
 button {
     margin: 3px;
     padding: 6px 12px;
-    background-color: #ec4899; /* 粉色按钮 */
+    background-color: #ec4899;
     border: none;
     border-radius: 4px;
     color: white;
@@ -73,7 +81,7 @@ button {
 }
 
 button:hover {
-    background-color: #db2777; /* 深粉色悬停 */
+    background-color: #db2777;
 }
 
 /* 输入框样式 */
@@ -85,24 +93,73 @@ input[type="text"], input[type="number"], input[type="password"] {
     width: 120px;
 }
 
-/* 更新提示 */
+/* 更新时间提示 */
 #updated {
     margin-top: 10px;
     font-size: 13px;
     color: #b91c73;
+    text-align: center;
 }
 
 /* 后台管理区域 */
 #adminArea {
-    background-color: #ffe6f5; /* 淡粉色背景 */
+    background-color: #ffe6f5;
     padding: 15px;
     margin-top: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.note {
-    display: none;
+
+/* === 响应式优化 === */
+
+/* 平板端适配 */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    table {
+        font-size: 15px;
+    }
+
+    th, td {
+        padding: 10px 8px;
+    }
 }
-h1 {
-    color: #000000 !important;
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px 6px;
+    }
+}
+
+/* 极小屏幕（小手机） */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px 4px;
+    }
 }
