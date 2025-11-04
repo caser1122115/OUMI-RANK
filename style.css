@@ -1,22 +1,20 @@
-/* === 全局样式 === */
+/* 全局样式 */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to bottom, #ffe6f0, #ffd9e8); /* 淡粉色渐变 */
+    background-attachment: fixed; /* 背景固定，不随滚动移动 */
+    background-repeat: no-repeat;
+    background-size: cover; /* 始终铺满整个视口 */
+    min-height: 100vh; /* 保证至少一屏高度 */
+    margin: 0;
     padding: 20px;
     color: #333;
-    margin: 0;
+    box-sizing: border-box;
 }
 
-/* 标题样式 */
 h1, h2, h3 {
-    color: #b91c73;
-}
-
-h1 {
-    color: #000000 !important;
+    color: #b91c73; /* 深粉色标题 */
     text-align: center;
-    font-size: 2em;
-    margin-top: 10px;
 }
 
 /* 表格样式 */
@@ -27,12 +25,13 @@ table {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: hidden;
+    background-color: #fff;
 }
 
 th, td {
     padding: 12px 15px;
     text-align: center;
-    word-break: break-word;
+    font-size: 16px;
 }
 
 th {
@@ -63,7 +62,7 @@ tr.top {
     100% {background-position: 100%;}
 }
 
-/* 排行榜说明（隐藏） */
+/* 隐藏说明文字 */
 .note {
     display: none;
 }
@@ -110,209 +109,52 @@ input[type="text"], input[type="number"], input[type="password"] {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* === 响应式优化 === */
+/* 积分榜标题为黑色 */
+h1 {
+    color: #000000 !important;
+}
 
-/* 平板端适配 */
+/* 响应式设计 */
 @media (max-width: 1024px) {
-    h1 {
-        font-size: 1.8em;
+    body {
+        padding: 15px;
     }
-
-    table {
+    th, td {
+        padding: 10px;
         font-size: 15px;
     }
-
-    th, td {
-        padding: 10px 8px;
+    h1 {
+        font-size: 26px;
     }
 }
 
-/* 手机端适配优化：字体更大、元素更易点击 */
 @media (max-width: 768px) {
     body {
-        padding: 12px;
-        font-size: 16px; /* 原来14px -> 提升为16px */
-        line-height: 1.6;
+        padding: 10px;
+        background-attachment: scroll; /* 防止手机端背景断层 */
     }
-
     table {
-        font-size: 15px; /* 原来13px -> 提升为15px */
-        box-shadow: none;
+        font-size: 14px;
     }
-
     th, td {
-        padding: 10px 6px; /* 更好触控间距 */
+        padding: 8px;
     }
-
     h1 {
-        font-size: 22px; /* 原来20px -> 更醒目 */
-        text-align: center;
-        margin-bottom: 12px;
-    }
-
-    #adminArea {
-        padding: 12px;
-        margin-top: 10px;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 8px;
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    input[type="text"], input[type="number"], input[type="password"] {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 10px;
-        font-size: 15px;
+        font-size: 22px;
     }
 }
 
-
-/* 极小屏幕（小手机） */
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.3em;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th, td {
-        padding: 6px 4px;
-    }
-}
-/* 响应式布局：手机与电脑适配 */
-@media (max-width: 768px) {
     body {
-        padding: 10px;
-        font-size: 14px;
+        padding: 8px;
     }
-
     table {
         font-size: 13px;
-        box-shadow: none;
     }
-
     th, td {
-        padding: 8px 5px;
+        padding: 6px;
     }
-
-    h1 {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    #adminArea {
-        padding: 10px;
-        margin-top: 8px;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 6px;
-    }
-
-    input[type="text"], input[type="number"], input[type="password"] {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-    body {
-        font-size: 15px;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-}
-
-@media (min-width: 1201px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    table {
-        font-size: 15px;
-    }
-}
-
-/* ✅ 响应式布局：让手机和电脑端都完美适配 */
-@media (max-width: 1024px) {
-    body {
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    table {
-        width: 100%;
-        font-size: 15px;
-        border-radius: 6px;
-    }
-
-    th, td {
-        padding: 10px 8px;
-    }
-
-    h1 {
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 16px;
-    }
-
-    button {
-        padding: 10px 16px;
-        font-size: 15px;
-        border-radius: 6px;
-    }
-
-    input[type="text"], input[type="number"], input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        font-size: 15px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
-}
-
-/* ✅ 针对小屏手机进一步优化（横向空间太小） */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-        font-size: 15px;
-    }
-
-    table {
-        display: block;
-        overflow-x: auto;  /* 横向滚动支持 */
-        white-space: nowrap;
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 8px 6px;
-    }
-
     h1 {
         font-size: 20px;
     }
-
-    #updated {
-        text-align: center;
-        font-size: 13px;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-    }
 }
-
-
