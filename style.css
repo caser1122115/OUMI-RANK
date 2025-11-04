@@ -243,4 +243,76 @@ input[type="text"], input[type="number"], input[type="password"] {
     }
 }
 
+/* ✅ 响应式布局：让手机和电脑端都完美适配 */
+@media (max-width: 1024px) {
+    body {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 15px;
+        border-radius: 6px;
+    }
+
+    th, td {
+        padding: 10px 8px;
+    }
+
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 15px;
+        border-radius: 6px;
+    }
+
+    input[type="text"], input[type="number"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+}
+
+/* ✅ 针对小屏手机进一步优化（横向空间太小） */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;  /* 横向滚动支持 */
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px 6px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #updated {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
 
