@@ -163,3 +163,61 @@ input[type="text"], input[type="number"], input[type="password"] {
         padding: 6px 4px;
     }
 }
+/* 响应式布局：手机与电脑适配 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 13px;
+        box-shadow: none;
+    }
+
+    th, td {
+        padding: 8px 5px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #adminArea {
+        padding: 10px;
+        margin-top: 8px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    input[type="text"], input[type="number"], input[type="password"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    body {
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1201px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    table {
+        font-size: 15px;
+    }
+}
+
