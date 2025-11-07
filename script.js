@@ -13,7 +13,7 @@ async function loadData() {
             // 根据 ROI 计算积分
             let earned = 0;
             if (roiVal < 1) earned = pay * 30;
-            else if (roiVal < 1.8) earned = pay * 40;
+            else if (roiVal < 1.5) earned = pay * 40;
             else earned = pay * 50;
 
             return { id, pay, roi: roiVal, value, earned };
@@ -49,4 +49,5 @@ async function loadData() {
 
 loadData();
 setInterval(loadData, 30000);
+
 
