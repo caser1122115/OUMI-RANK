@@ -1,33 +1,28 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>主播排行榜</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主播排行榜</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>积分榜</h1>
-
-  <div class="table-container">
-    <table id="rankTable">
-      <thead>
-        <tr>
-          <th>排名</th>
-          <th>主播ID</th>
-          <th>注册数</th>
-          <th>付费数</th>
-          <th>付费率</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-  <div id="updated"></div>
-
-  <script src="script.js"></script>
+    <h1>主播积分榜</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th>主播ID</th>
+                    <th>注册人数</th>
+                    <th>付费人数</th>
+                    <th>付费率</th>
+                </tr>
+            </thead>
+            <tbody id="rankBody"></tbody>
+        </table>
+    </div>
+    <div id="updated"></div>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
