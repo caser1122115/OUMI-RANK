@@ -1,8 +1,8 @@
-id,regCount,payCount,rate
-Yvonne,23,9,39.1%
-cricel,8,3,33.3%
-Amy,2,0,0
-nana,0,0,0
-lena,0,0,0
-lily,0,0,0
-Youmi,0,0,0
+id,regCount,payCount
+Yvonne,23,9
+cricel,8,3
+Amy,2,0
+nana,0,0
+lena,0,0
+lily,0,0
+Youmi,0,0
